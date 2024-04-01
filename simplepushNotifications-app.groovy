@@ -35,11 +35,12 @@
  *
  *  Changes:
  *  0.0.5 - 01/27/24 - Initial release
+ *  1.0.0 - 04/01/24 - Adding to HPM
  */
 
 def setVersion(){
     state.name = "Simplepush Notifications"
-    state.version = "0.0.5"
+    state.version = "1.0.0"
 }
 
 def syncVersion(evt){
@@ -49,8 +50,8 @@ def syncVersion(evt){
 
 definition(
     name: "Simplepush Notifications",
-    namespace: "BPTWorld",
-    author: "Bryan Turcotte",
+    namespace: "tmleafs",
+    author: "Bryan Turcotte & Steven Dale (TMLeafs)",
     description: "Send Simplepush notifications to your phone with Actions!",
     category: "Convenience",
     iconUrl: "",
@@ -300,7 +301,7 @@ def createDataChildDev(driverName) {
     if(!getChildDevice(dataName)) {
         if(logEnable) log.debug "In createDataChildDevice - Child device not found - Creating device: ${dataName}"
         try {
-            addChildDevice("BPTWorld", driverName, dataName, 1234, ["name": "${dataName}", isComponent: false])
+            addChildDevice("TMLeafs", driverName, dataName, 1234, ["name": "${dataName}", isComponent: false])
             if(logEnable) log.debug "In createDataChildDevice - Child device has been created! (${dataName})"
             statusMessageD = "<b>Device has been been created. (${dataName})</b>"
         } catch (e) { if(logEnable) log.debug "Unable to create device - ${e}" }
