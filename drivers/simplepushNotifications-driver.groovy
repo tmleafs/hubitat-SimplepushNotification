@@ -39,7 +39,7 @@
  */
 
 metadata {
-	definition (name: "Simplepush Notification Driver", namespace: "BPTWorld", author: "Bryan Turcotte", importUrl: "") {
+	definition (name: "Simplepush Notification Driver", namespace: "tmleafs", author: "Bryan Turcotte", importUrl: "") {
         capability "Notification"
         capability "Actuator"
         capability "Switch"
