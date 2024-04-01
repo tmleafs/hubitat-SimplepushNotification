@@ -301,7 +301,7 @@ def createDataChildDev(driverName) {
     if(!getChildDevice(dataName)) {
         if(logEnable) log.debug "In createDataChildDevice - Child device not found - Creating device: ${dataName}"
         try {
-            addChildDevice("TMLeafs", driverName, dataName, 1234, ["name": "${dataName}", isComponent: false])
+            addChildDevice("tmleafs", driverName, dataName, 1234, ["name": "${dataName}", isComponent: false])
             if(logEnable) log.debug "In createDataChildDevice - Child device has been created! (${dataName})"
             statusMessageD = "<b>Device has been been created. (${dataName})</b>"
         } catch (e) { if(logEnable) log.debug "Unable to create device - ${e}" }
